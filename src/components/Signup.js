@@ -10,13 +10,14 @@ export default function Signup() {
 	const [getData, setData] = useState({ emailid: "", password: "", name: "" });
 	const formRef = useRef();
 	const handleClick = async (e) => {
-		context.setLoading(true);
 		e.preventDefault();
+		// context.setLoading(true);
 		let res = await postRequest("user/", getData);
-		context.setLoading(false);
+		// context.setLoading(false);
 		if (res.status) {
 			context.Alert("SignUp SuccessFully", "success");
-			window.location.href = "/";
+			history.push("/")
+			// window.location.href = "/";
 		} else {
 			alert(res.error);
 		}

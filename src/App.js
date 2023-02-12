@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import "./App.css"
-import { Switch, Route, Routes } from 'react-router-dom'
+import { Switch, Route, Routes, Redirect } from 'react-router-dom'
 import Home from "./pages/Home"
 import MyNotes from "./pages/MyNotes"
 import Shared from "./pages/Shared"
@@ -11,12 +11,15 @@ import Navbar from './components/Navbar';
 import Note from './components/Note';
 
 function App() {
+  let token=(document.cookie).split(';').find((x)=>x.includes('token')).slice(7);
+  // console.log({token});
   return (
     <div className='App'>
       {/* <Navbar/> */}
       <Switch>
           <Route exact path="/">
-            <Home />
+          <Navbar/>
+            {token?<Home />:<Redirect to='/login'/>}
           </Route>
           <Route exact path="/notes">
             <>
