@@ -9,7 +9,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import Note from './components/Note';
-
+import UploadFile from './components/UploadFile';
 function App() {
   let token = document.cookie ? (document.cookie).split(';').find((x) => x.includes('token')).slice(7) : '';
   // console.log({token});
@@ -41,6 +41,14 @@ function App() {
             <>
               <Navbar />
               <Note />
+            </>
+            : < Redirect to='/login' />}
+        </Route>
+        <Route exact path="/upload">
+          {token ?
+            <>
+              <Navbar />
+              <UploadFile />
             </>
             : < Redirect to='/login' />}
         </Route>

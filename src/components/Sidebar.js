@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div style={{ marginRight: "20px", padding: "10px", paddingRight: "45px", borderRight: "0.5px solid white" }}>
       <div style={tab}>
-        <Link to="/profile">Profile</Link>
+        <Link to="/upload">+ Upload</Link>
       </div>
       <div style={tab}>
         <Link to="/notes">Notes</Link>
