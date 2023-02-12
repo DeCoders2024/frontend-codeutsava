@@ -1,0 +1,12 @@
+:root {
+	--accent-clr: #ff2d60;
+	--backgroud-clr: #050505;
+}
+
+body{
+    background: var(--backgroud-clr);
+    color:white;
+}
+.btn{
+    background-color: var(--accent-clr);
+}

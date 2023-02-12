@@ -5,12 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Screen Recorder</title>
-	
 	<link rel="stylesheet" href="dist/tailwind.css" />
+	<link rel="stylesheet" href="record.css" />
 </head>
-<body class="bg-[#03203C] text-white">
+<body class="bg-[#050505] text-white">
 	
-	<header class="bg-gray-600">
+	<header class="btn">
 		<div class="container mx-auto">
 			<div class="flex justify-center items-center py-4">
 				<h1 class="text-2xl font-bold uppercase">Screen Recorder</h1>
@@ -24,13 +24,17 @@
 				Video recorder
 			</h2>
 
-			<video src="" autplay class="video-feedback bg-black w-full h-auto mb-4"></video>
+			<video src="" autplay class="video-feedback bg-black mb-4"
+			style="border:1px solid gray; height: 500px; width: 800px;"
+			></video>
+
+			<hr style="margin:20px"/>
 
 			<div class="flex flex-wrap -mx-4 mb-8">
-				<button class="start-recording mx-4 flex-1 bg-blue-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
+				<button class="start-recording mx-4 flex-1 btn p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50">
 					Record Screen
 				</button>
-				<button class="stop-recording mx-4 flex-1 bg-blue-500 p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
+				<button class="stop-recording mx-4 flex-1 btn p-4 uppercase text-lg font-bold transition-all duration-300 hover:opacity-90 disabled:opacity-50" disabled>
 					Stop Recording
 				</button>
 			</div>
