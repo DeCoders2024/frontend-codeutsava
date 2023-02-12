@@ -11,7 +11,7 @@ import Navbar from './components/Navbar';
 import Note from './components/Note';
 
 function App() {
-  let token = (document.cookie).split(';').find((x) => x.includes('token')).slice(7);
+  let token = document.cookie ? (document.cookie).split(';').find((x) => x.includes('token')).slice(7) : '';
   // console.log({token});
   return (
     <div className='App'>
@@ -19,13 +19,16 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Navbar />
-          {token ? <Home /> : <Redirect to='/login' />}
+          <Home />
         </Route>
         <Route exact path="/notes">
-          <>
-            <Navbar />
-            <MyNotes />
-          </>
+          {token ?
+            <>
+              <Navbar />
+              <MyNotes />
+            </>
+            : < Redirect to='/login' />}
+
         </Route>
         <Route exact path="/login">
           {token ? <Redirect to='/' /> : <Login />}
@@ -34,10 +37,12 @@ function App() {
           {token ? <Redirect to='/' /> : <Signup />}
         </Route>
         <Route exact path="/notes/:noteid">
-          <>
-            <Navbar />
-            <Note />
-          </>
+          {token ?
+            <>
+              <Navbar />
+              <Note />
+            </>
+            : < Redirect to='/login' />}
         </Route>
       </Switch>
     </div>

@@ -10,15 +10,12 @@ export default function Login() {
 	const [getData, setData] = useState({ emailid: "", password: "" });
 	const formRef = useRef();
 	const handleClick = async (e) => {
-		// context.setLoading(true);
 		e.preventDefault();
-		let res = await postRequest("user/login", getData);
-		// context.setLoading(false);
-		if (res.status) {
-			// context.Alert("Login SuccessFully", "success");
+		let res = await postRequest("user/login", getData);		
+		if (res.status===true) {
 			history.push("/");
 		} else {
-			alert(res.error);
+			alert('error');
 		}
 	};
 	const setUserData = (e, type) => {
