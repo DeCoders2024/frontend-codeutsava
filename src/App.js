@@ -10,8 +10,10 @@ import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import Note from './components/Note';
 import UploadFile from './components/UploadFile';
+import Cookies from "js-cookie";
+
 function App() {
-  let token = document.cookie ? (document.cookie).split(';').find((x) => x.includes('token')).slice(7) : '';
+  let token = Cookies.get("token");
   // console.log({token});
   return (
     <div className='App'>
