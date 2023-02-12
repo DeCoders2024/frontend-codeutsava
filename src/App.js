@@ -8,26 +8,33 @@ import TaskM from "./pages/TaskM"
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
+import Note from './components/Note';
 
 function App() {
   return (
     <div className='App'>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Switch>
           <Route exact path="/">
             <Home />
           </Route>
           <Route exact path="/notes">
+            <>
+            <Navbar/>
             <MyNotes />
+            </>
           </Route>
-          {/* <Route exact path="/recorder">
-            <Recorder/>
-          </Route> */}
           <Route exact path="/login">
             <Login />
           </Route>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/notes/:noteid">
+          <>
+            <Navbar/>
+            <Note/>
+          </>
           </Route>
       </Switch>
     </div>

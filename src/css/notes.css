@@ -12,15 +12,14 @@ body {
 	position: relative;
 	justify-content: space-evenly;
 	align-items: space-evenly;
-	color:white;
-	/* overflow:hidden; */
+	color: white;
 }
 
 .notes-body {
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
-	height: 80vh;
+	height: 100vh;
 	position: relative;
 	justify-content: space-evenly;
 	align-items: space-evenly;
@@ -67,14 +66,69 @@ body {
 
 	bottom: 0;
 }
-/* .card div:nth-child(3):hover {
+.card div:nth-child(3):hover {
 	background-image: linear-gradient(
 		to bottom,
 		rgba(0, 0, 0, 0),
 		rgba(0, 0, 0, 1),
 		rgb(0, 0, 0)
 	);
-} */
+}
+
+.login-main-div {
+	background-color: var(--backgroud-clr);
+	height: 100vh;
+	display: flex;
+	/* justify-content: center; */
+	position: relative;
+	color: white;
+}
+.login-main-div img {
+	height: 100%;
+	margin-right: 500px;
+}
+.login-sec-2 {
+	position: relative;
+}
+
+.login-sec-2-main {
+	width: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	height: 100vh;
+	margin: auto;
+}
+.login-sec-2-main * {
+	color: white;
+}
+
+.login-sec-2-main input {
+	border-bottom: 2px var(--accent-clr) solid;
+}
+
+.login-sec-2-main input:focus {
+	color: white;
+	border: none;
+}
+
+.login-sec-2-main label {
+	color: white;
+}
+
+.login-sec-2-main label:focus {
+	color: white;
+}
+
+.login-sec-2-label {
+	font-size: 24px;
+}
+
+.login-sec-2-warn {
+	cursor: pointer;
+	color: var(--accent-clr);
+}
 
 @media only screen and (max-width: 600px) {
 	.card {

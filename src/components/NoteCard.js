@@ -1,9 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import '../css/notes.css'
 
-function NoteCard() {
+function NoteCard(props) {
+	const history = useHistory()
 	return (
-		<div className="card">
+		<div className="card" onClick={()=>history.push("/notes/"+(props.id))}>
 			<div className="head">NoteCard</div>
 			<div className="card-show">
 				{" "}

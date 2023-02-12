@@ -15,9 +15,6 @@ const Sidebar = () => {
             window.location.href='/Recorder/index.html'
             }}>Recorder</div>
         </div>
-        <div style={tab}>
-          <Link to="/task">Task</Link>
-        </div>
         <div
          style={tab}
          onClick={()=>alert('logout success')}>Logout</div>
